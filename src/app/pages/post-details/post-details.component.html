@@ -1,0 +1,6 @@
+<app-post-card
+  *ngIf="post$|async as post"
+  [title]="post.title"
+  [body]="post.body">
+  <a [routerLink]="['/']">Go to list</a>
+</app-post-card>

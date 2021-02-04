@@ -1,0 +1,6 @@
+<app-post-card
+  *ngFor="let post of posts$|async"
+  [title]="post.title"
+  [body]="post.body">
+  <a [routerLink]="['/post', post.id]">Open</a>
+</app-post-card>
