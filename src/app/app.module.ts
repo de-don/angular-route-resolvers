@@ -7,6 +7,8 @@ import {PostsComponent} from './pages/posts/posts.component';
 import {PostDetailsComponent} from './pages/post-details/post-details.component';
 import {PostCardComponent} from './components/post-card/post-card.component';
 import {HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule,
   ],
   bootstrap: [AppComponent]
 })
