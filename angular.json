@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "router-experements": {
+    "router-resolvers": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/router-experements",
+            "outputPath": "dist/router-resolvers",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "router-experements:build"
+            "browserTarget": "router-resolvers:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "router-experements:build:production"
+              "browserTarget": "router-resolvers:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "router-experements:build"
+            "browserTarget": "router-resolvers:build"
           }
         },
         "test": {
@@ -111,16 +111,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "router-experements:serve"
+            "devServerTarget": "router-resolvers:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "router-experements:serve:production"
+              "devServerTarget": "router-resolvers:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "router-experements"
+  "defaultProject": "router-resolvers"
 }
