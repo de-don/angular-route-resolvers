@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Post} from '../../models/post';
+import {pluck} from 'rxjs/operators';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -8,10 +8,12 @@ import {Post} from '../../models/post';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent {
-  public posts$ = this.httpClient.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
+  public posts$ = this.activatedRoute.data.pipe(
+    pluck('posts'),
+  );
 
   constructor(
-    private readonly httpClient: HttpClient,
+    private readonly activatedRoute: ActivatedRoute,
   ) {
   }
 }
