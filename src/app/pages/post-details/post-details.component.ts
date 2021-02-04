@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {pluck} from 'rxjs/operators';
+import {pluck, tap} from 'rxjs/operators';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -8,8 +8,11 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./post-details.component.css']
 })
 export class PostDetailsComponent {
+  public updateDate?: Date;
+
   public post$ = this.activatedRoute.data.pipe(
     pluck('post'),
+    tap(() => this.updateDate = new Date()),
   );
 
   constructor(

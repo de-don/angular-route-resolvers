@@ -9,13 +9,15 @@ import {PostCardComponent} from './components/post-card/post-card.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { PostNotFoundComponent } from './pages/post-not-found/post-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
     PostDetailsComponent,
-    PostCardComponent
+    PostCardComponent,
+    PostNotFoundComponent
   ],
   imports: [
     BrowserModule,

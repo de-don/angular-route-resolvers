@@ -2,5 +2,6 @@
   *ngIf="post$|async as post"
   [title]="post.title"
   [body]="post.body">
-  <a [routerLink]="['/']">Go to list</a>
+  <a [routerLink]="['/']">Go to list</a><br>
+  <a [routerLink]="['/post', post.id]">Refresh</a> (Last update date: {{ updateDate.toISOString() }})
 </app-post-card>

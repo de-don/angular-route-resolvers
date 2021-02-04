@@ -5,6 +5,7 @@ import {PostsComponent} from './pages/posts/posts.component';
 import {PostDetailsComponent} from './pages/post-details/post-details.component';
 import {PostResolver} from './services/post.resolver';
 import {PostsListResolver} from './services/posts-list.resolver';
+import {PostNotFoundComponent} from './pages/post-not-found/post-not-found.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,12 @@ const routes: Routes = [
     component: PostDetailsComponent,
     resolve: {
       post: PostResolver,
-    }
+    },
+    runGuardsAndResolvers: 'always',
+  },
+  {
+    path: 'not-found',
+    component: PostNotFoundComponent,
   }
 ];
 
@@ -27,7 +33,7 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'}),
   ],
   exports: [
     RouterModule,
